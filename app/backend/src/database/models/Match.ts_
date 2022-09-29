@@ -21,33 +21,39 @@ Match.init({
   homeTeam: {
     type: INTEGER,
     allowNull: false,
+    field: 'home_team',
   },
   homeTeamGoals: {
     type: INTEGER,
     allowNull: false,
+    field: 'home_team_goals',
   },
   awayTeam: {
     type: INTEGER,
     allowNull: false,
+    field: 'away_team',
   },
   awayTeamGoals: {
     type: INTEGER,
     allowNull: false,
+    field: 'away_team_goals',
   },
   inProgress: {
     type: BOOLEAN,
     allowNull: false,
+    field: 'in_progress',
   },
 }, {
   sequelize: db,
   modelName: 'matches',
   timestamps: false,
+  underscored: true,
 });
 
-Team.belongsTo(Match, { foreignKey: 'homeTeam', as: 'homeTeam' });
-Team.belongsTo(Match, { foreignKey: 'awayTeam', as: 'awayTeam' });
+Teams.belongsTo(Teams, { foreignKey: 'homeTeam', as: 'teamHome' });
+Teams.belongsTo(Teams, { foreignKey: 'awayTeam', as: 'teamAway' });
 
-Match.hasMany(Team, { foreignKey: 'homeTeam', as: 'homeTeam' });
-Match.hasMany(Team, { foreignKey: 'awayTeam', as: 'awayTeam' });
+Matches.hasMany(Matches, { foreignKey: 'homeTeam', as: 'teamHome' });
+Matches.hasMany(Matches, { foreignKey: 'awayTeam', as: 'teamAway' });
 
 export default Match;
