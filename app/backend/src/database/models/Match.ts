@@ -7,7 +7,7 @@ class Match extends Model {
   homeTeam!: number;
   homeTeamGoals!: number;
   awayTeam!: number;
-  awayTeamToals!: number;
+  awayTeamGoals!: number;
   inProgress!: boolean;
 }
 
@@ -50,10 +50,10 @@ Match.init({
   underscored: true,
 });
 
-Team.belongsTo(Team, { foreignKey: 'homeTeam', as: 'teamHome' });
-Team.belongsTo(Team, { foreignKey: 'awayTeam', as: 'teamAway' });
+Team.hasMany(Team, { foreignKey: 'homeTeam', as: 'teamHome' });
+Team.hasMany(Team, { foreignKey: 'awayTeam', as: 'teamAway' });
 
-Match.hasMany(Match, { foreignKey: 'homeTeam', as: 'teamHome' });
-Match.hasMany(Match, { foreignKey: 'awayTeam', as: 'teamAway' });
+Match.belongsTo(Match, { foreignKey: 'homeTeam', as: 'teamHome' });
+Match.belongsTo(Match, { foreignKey: 'awayTeam', as: 'teamAway' });
 
 export default Match;
