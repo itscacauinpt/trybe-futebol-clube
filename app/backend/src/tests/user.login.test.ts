@@ -22,7 +22,7 @@ describe('Testing the Login Endpoint', () => {
   it('Endpoint POST, login com sucesso', async () => {
     const post = await chai.request(app).post('/login').send(adm);
 
-    expect(post.status).to.equal(201);
+    expect(post.status).to.equal(200);
     expect(post.body).to.deep.equal(adm);
   });
 });
