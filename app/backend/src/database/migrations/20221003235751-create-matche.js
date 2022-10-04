@@ -46,10 +46,10 @@ module.exports = {
         field: 'in_progress',
         allowNull: false,
       },
-    });
+    })
   },
 
   down: async (queryInterface, _Sequelize) => {
-     await queryInterface.dropTable('matches')
+    await queryInterface.dropTable('matches')
   }
 };
