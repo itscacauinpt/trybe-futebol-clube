@@ -17,6 +17,6 @@ export default class UserService {
 
     const token = TokenConfig.createToken(user.email);
 
-    return { code: 200, response: token };
+    return { code: 200, token };
   };
 }
