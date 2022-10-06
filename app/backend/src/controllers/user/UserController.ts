@@ -8,10 +8,10 @@ export default class UserController {
   async login(req: Request, res: Response) {
     const user = req.body as ILogin;
 
-    const { code, message, token } = await this.model.login(user);
+    const { code, message, response } = await this.model.login(user);
 
     if (message) return res.status(code).json({ message });
 
-    return res.status(code).json({ token });
+    return res.status(code).json({ token: response });
   }
 }

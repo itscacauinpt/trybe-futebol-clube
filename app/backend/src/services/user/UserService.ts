@@ -1,6 +1,5 @@
 import UserModel from '../../model/user/UserModel';
 import { ILogin } from '../../interfaces/ILogin';
-// import UserDTO from '../../interfaces/UserDTO';
 import TokenConfig from '../../utils/TokenConfig';
 import Bcrypt from '../../utils/Bcrypt';
 
@@ -8,7 +7,6 @@ export default class UserService {
   constructor(private model = new UserModel()) {}
 
   login = async (user: ILogin) => {
-    // const findUser = await User.findOne({ where: { email: user } });
     const findUser = await this.model.findOne(user.email);
 
     if (!findUser) return { code: 401, message: 'Incorrect email or password' };
@@ -19,6 +17,6 @@ export default class UserService {
 
     const token = TokenConfig.createToken(user.email);
 
-    return { code: 200, token };
+    return { code: 200, response: token };
   };
 }
