@@ -19,4 +19,19 @@ export default class UserService {
 
     return { code: 200, token };
   };
+
+  validateLogin = async (token: string | undefined) => {
+    if (!token) return { code: 401, message: 'Token not found' };
+
+    try {
+      const verifiedToken = TokenConfig.verifyToken(token);
+      const verifiedUser = await this.model.findOne(verifiedToken.email);
+
+      if (!verifiedUser) return { code: 401, message: 'User not found' };
+
+      return { code: 200, role: verifiedToken.role };
+    } catch (error) {
+      return { code: 401, message: 'Expired or invalid token' };
+    }
+  };
 }

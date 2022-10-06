@@ -16,4 +16,14 @@ export default class UserController {
 
     return res.status(code).json({ token });
   }
+
+  async validateLogin(req: Request, res: Response) {
+    const { authorization } = req.headers;
+
+    const { code, message, role } = await this.model.validateLogin(authorization);
+
+    if (message) return res.status(code).json({ message });
+
+    return res.status(code).json({ role });
+  }
 }
