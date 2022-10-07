@@ -29,7 +29,7 @@ export default class UserService {
 
       if (!verifiedUser) return { code: 401, message: 'User not found' };
 
-      return { code: 200, role: verifiedToken.role };
+      return { code: 200, role: verifiedUser.role };
     } catch (error) {
       return { code: 401, message: 'Expired or invalid token' };
     }
