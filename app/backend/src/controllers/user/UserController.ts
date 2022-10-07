@@ -12,8 +12,6 @@ export default class UserController {
 
     if (message) return res.status(code).json({ message });
 
-    console.log(token);
-
     return res.status(code).json({ token });
   }
 
