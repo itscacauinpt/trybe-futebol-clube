@@ -1,6 +1,6 @@
 import Match from '../../database/models/Match';
 import Team from '../../database/models/Team';
-import IMatches from '../../interfaces/IMatch';
+import { IMatches } from '../../interfaces/IMatch';
 
 export default class MatchModel {
   protected model = Match;
@@ -12,5 +12,9 @@ export default class MatchModel {
         { model: Team, as: 'teamAway', attributes: ['teamName'] },
       ],
     });
+  }
+
+  async saveMatch(match: IMatches): Promise<IMatches | null> {
+    return this.model.create(match);
   }
 }

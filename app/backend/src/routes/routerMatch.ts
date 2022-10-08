@@ -6,5 +6,6 @@ const router = Router();
 const controller = new MatchController();
 
 router.get('/matches', controller.getMacthes.bind(controller));
+router.post('/matches', controller.saveMatch.bind(controller));
 
 export default router;

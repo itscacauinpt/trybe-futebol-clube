@@ -9,4 +9,11 @@ export default class MatchController {
 
     return res.status(code).json(response);
   }
+
+  async saveMatch(req: Request, res: Response) {
+    const match = req.body;
+    const { code, response } = await this.service.saveMatch(match);
+
+    return res.status(code).json(response);
+  }
 }
