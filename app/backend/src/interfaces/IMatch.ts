@@ -9,3 +9,8 @@ export interface IMatches {
 export interface IMatch extends IMatches {
   id: number;
 }
+
+export interface IMResult extends IMatch {
+  teamHome: object;
+  teamAway: object;
+}
