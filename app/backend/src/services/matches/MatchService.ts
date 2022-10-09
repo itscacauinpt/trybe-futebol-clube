@@ -21,4 +21,10 @@ export default class MatchService {
 
     return { code: 200, message: 'Finished' };
   };
+
+  updateMatch = async (id: number, homeTeamGoals: number, awayTeamGoals: number) => {
+    await this.model.updateMatch(id, homeTeamGoals, awayTeamGoals);
+
+    return { code: 200, message: 'Finished' };
+  };
 }
