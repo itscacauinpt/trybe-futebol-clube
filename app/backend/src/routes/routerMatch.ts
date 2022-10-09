@@ -2,13 +2,19 @@ import { Router } from 'express';
 import MatchController from '../controllers/matches/MatchController';
 
 import TokenMidd from '../middleware/match/TokenMiddleware';
-// import TeamsMidd from '../middleware/match/TeamsMiddleware';
+import { validateEqualTeams, validateTeams } from '../middleware/match/TeamsMiddleware';
 
 const router = Router();
 
 const controller = new MatchController();
 
-router.get('/matches', controller.getMacthes.bind(controller));
-router.post('/matches', TokenMidd, controller.saveMatch.bind(controller));
+router.get('/matches', controller.getMatches.bind(controller));
+router.post(
+  '/matches',
+  TokenMidd,
+  validateEqualTeams,
+  validateTeams,
+  controller.saveMatch.bind(controller),
+);
 
 export default router;
