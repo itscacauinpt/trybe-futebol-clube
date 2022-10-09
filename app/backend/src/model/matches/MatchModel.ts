@@ -21,4 +21,11 @@ export default class MatchModel {
   async findOne(id: number): Promise<IMatch | null> {
     return this.model.findOne({ where: { id } });
   }
+
+  //   return this.model.update({ homeTeamGoals, awayTeamGoals }, { where: { id, inProgress: true } });
+  // }
+
+  async finishedMatch(id: number): Promise<[number, IMatches[]] | null> {
+    return this.model.update({ inProgress: false }, { where: { id } });
+  }
 }

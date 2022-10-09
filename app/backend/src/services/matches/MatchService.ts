@@ -15,4 +15,10 @@ export default class MatchService {
 
     return { code: 201, response: theMatch };
   };
+
+  finishedMatch = async (id: number) => {
+    await this.model.finishedMatch(id);
+
+    return { code: 200, message: 'Finished' };
+  };
 }

@@ -9,6 +9,8 @@ const router = Router();
 const controller = new MatchController();
 
 router.get('/matches', controller.getMatches.bind(controller));
+// router.patch('/matches/:id', controller.updateMatch.bind(controller));
+router.patch('/matches/:id/finish', controller.finishMatch.bind(controller));
 router.post(
   '/matches',
   TokenMidd,
