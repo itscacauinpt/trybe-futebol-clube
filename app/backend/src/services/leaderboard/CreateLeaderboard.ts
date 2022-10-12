@@ -1,5 +1,4 @@
 import { IMatches } from '../../interfaces/IMatch';
-// import { IMatch, IMatches } from '../../interfaces/IMatch';
 import { ILeaderboard, ILResult } from '../../interfaces/ILeaderboard';
 
 export default class CreateLeaderboard {
@@ -64,7 +63,6 @@ export default class CreateLeaderboard {
 
   static TotalEfficiency = (points: number, games: number) => {
     const result = ((points / (games * 3)) * 100).toFixed(2);
-    // return result.toFixed(2);
     return result;
   };
 
@@ -100,7 +98,5 @@ export default class CreateLeaderboard {
 
       return 0;
     });
-
-    // return ratingBoard;
   };
 }
