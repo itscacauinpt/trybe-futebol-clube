@@ -20,7 +20,7 @@ export default class CreateLeaderboard {
       goalsFavor: score.goalsFavor,
       goalsOwn: score.goalsOwn,
       goalsBalance: score.goalsBalance,
-      efficiency: Number(eff),
+      efficiency: eff,
     };
     return board;
   }
