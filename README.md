@@ -1,7 +1,10 @@
 ### 🚧 readme in construction 🚧
 <img src="#" width="200px">
+
 # Trybe Futebol Club
+
 Project done individually during the course of the <a href="https://www.betrybe.com">Trybe</a>.
+
 ### 💻 Description
 
 ### :woman_technologist: Technologies
