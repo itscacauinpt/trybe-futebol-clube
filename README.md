@@ -1,18 +1,11 @@
 <img src="./app/frontend/src/images/negative_logo.png" width="300px" align="right">
 
-# Trybe Futebol Club 
+# Trybe Futebol Club
+> Status: finished :heavy_check_mark: :warning:
 
 Project done individually during the course of the <a href="https://www.betrybe.com">Trybe</a>.
 
-"TFC is an informative website about soccer matches and standings! :soccer:
-
-On the TFC development team, your squad is responsible for developing an API (using the TDD method) and also integrating - through docker-compose - the applications so that they work by consuming a database.
-
-In this project, you will build a dockerized back-end using Sequelize data modeling. Your development must respect business rules provided in the project and your API must be able to be consumed by a front-end already provided in this project.
-
-To add a match it is necessary to have a token, so the person must be logged in to make changes. We will have a relationship between the teams and matches tables to update matches.
-
-Your back-end will have to implement business rules to properly populate the table available on the front-end that will be displayed to the person using the system."
+"TFC is an informative website about soccer matches and standings! :soccer:"
 
 ### :woman_technologist: Technologies
 * Software Architecture (MSC - Model, Service and Controller)
@@ -50,6 +43,8 @@ It access the site `http://localhost:3000/`; connect with the back-end by `http:
 
 👉 Running locally (without Docker)
 ...
+
+</br>
 <div align="center">
   Copyright copyright Trybe 2022 - Full-Stack Project Trybe Futebol Club
   </br>
