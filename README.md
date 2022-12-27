@@ -1,3 +1,4 @@
+:construction: readme in construction :construction:
 <img src="./app/frontend/src/images/negative_logo.png" width="300px" align="right">
 
 # Trybe Futebol Club
