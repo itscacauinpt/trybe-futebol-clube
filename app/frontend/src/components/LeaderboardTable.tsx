@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { requestData } from '../services/requests';
-import Loading from './Loading';
 import { v4 as uuidv4 } from 'uuid';
+import Loading from './Loading';
+
+import { LDProp } from '../interfaces/IProps';
+import { requestGet } from '../services/requests';
 import '../styles/components/leaderboardTable.css';
 
-const LeaderboardTable = ({ currentFilter }) => {
+const LeaderboardTable = ({ currentFilter }: LDProp) => {
   const [leaderboard, setLeaderboard] = useState([]);
 
-  const getLeaderboard = (endpoint) => requestData(endpoint)
+  const getLeaderboard = (endpoint: string) => requestGet(endpoint)
     .then((response) => setLeaderboard(response))
     .catch((error) => console.log(error));
 
