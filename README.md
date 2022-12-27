@@ -1,11 +1,9 @@
-### 🚧 readme in construction 🚧
-<img src="#" width="200px">
+🚧 readme in construction 🚧
+<img src="./app/frontend/src/images/negative_logo.png" width="300px" align="right">
 
 # Trybe Futebol Club
 
 Project done individually during the course of the <a href="https://www.betrybe.com">Trybe</a>.
-
-### 💻 Description
 
 ### :woman_technologist: Technologies
 * Software Architecture (MSC - Model, Service and Controller)
