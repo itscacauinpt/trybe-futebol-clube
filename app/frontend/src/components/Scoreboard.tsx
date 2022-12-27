@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ScoreProps } from '../interfaces/IProps';
 
-const Scoreboard = ({ homeTeam, score, setScore, qtyGoal, testId }) => (
+const Scoreboard = ({ homeTeam, score, setScore, qtyGoal, testId }: ScoreProps) => (
   <label htmlFor={ (homeTeam) ? 'home-team-scoreboard' : 'away-team-scoreboard' }>
     <p>Gols</p>
     <input

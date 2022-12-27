@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AddNewMatchBtn = () => (
+const AddNewMatchBtn: React.FunctionComponent = () => (
   <div>
     <Link
       className="add-new-game-button"

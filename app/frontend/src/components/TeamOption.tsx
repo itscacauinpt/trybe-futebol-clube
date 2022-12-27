@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TeamProps } from '../interfaces/IProps';
 
-const TeamOption = ({ teams, homeTeam, getTeam, testId }) => (
+const TeamOption = ({ teams, homeTeam, getTeam, testId }: TeamProps) => (
   <label htmlFor={ (homeTeam) ? 'home-team-scoreboard' : 'away-team-scoreboard' }>
     { (homeTeam) ? <p>Time Mandante</p> : <p>Time Visitante</p> }
     <select
@@ -12,7 +13,7 @@ const TeamOption = ({ teams, homeTeam, getTeam, testId }) => (
       } }
     >
       {
-        teams.map(({ teamName }, index) => (
+        teams.map(({ teamName }: any, index: any) => (
           <option key={ index } value={ teamName }>{ teamName }</option>
         ))
       }
