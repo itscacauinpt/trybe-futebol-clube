@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { GameProp } from '../interfaces/IProps';
 import '../styles/pages/games.css';
 
-const GamerFilter = ({ currentFilter, setCurrentFilter }) => {
+const GamerFilter = ({ currentFilter, setCurrentFilter }: GameProp) => {
   const handleCurrentFilter = () => {
-    const selectedFilter = document.getElementById('classification-filter').value;
+    const selectedFilter = (document.getElementById('classification-filter') as HTMLInputElement).value
     setCurrentFilter(selectedFilter);
   };
 
@@ -34,8 +34,8 @@ const GamerFilter = ({ currentFilter, setCurrentFilter }) => {
 };
 
 GamerFilter.propTypes = ({
-  currentFilter: PropTypes.string,
-  setCurrentFilter: PropTypes.func,
-}).isRequired;
+  currentFilter: PropTypes.string.isRequired,
+  setCurrentFilter: PropTypes.func.isRequired,
+});
 
 export default GamerFilter;
