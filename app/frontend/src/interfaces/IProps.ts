@@ -7,4 +7,13 @@ interface LDProp {
   currentFilter: any
 }
 
-export type { GameProp, LDProp }
+interface GTProps {
+  isAdm: any;
+  currentFilter: any;
+}
+
+export type {
+  GameProp,
+  LDProp,
+  GTProps,
+}
