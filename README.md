@@ -5,9 +5,11 @@ Project done individually during the course of the <a href="https://www.betrybe.
 ### 💻 Description
 
 ### :woman_technologist: Technologies
-* Software Architecture (MSC - Model, Service and Controller), SOLID
-* Node.js, Express.js, MySQL, Sequelize
-* Reaact.js
+* Software Architecture (MSC - Model, Service and Controller)
+* Node.js, SOLID and DDD
+* React.js, TypeScript
+* Express.js, MySQL, Sequelize
+
 
 ### :woman_technologist: Run and test
 :point_right: Running with Docker (:warning: docker-compose 1.29 or superior)
