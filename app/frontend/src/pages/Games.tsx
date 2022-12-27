@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import GamesTable from '../components/GamesTable';
+
 import Header from '../components/Header';
+import LoginBtn from '../components/LoginBtn';
+import GamesTable from '../components/GamesTable';
+import GamerFilter from '../components/GameFilter';
 import AddNewMatchBtn from '../components/AddNewMatchBtn';
 import LeaderboardBtn from '../components/LeaderboardBtn';
-import LoginBtn from '../components/LoginBtn';
-import GamerFilter from '../components/GameFilter';
+
 import '../styles/pages/games.css';
 
 const Games = () => {

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { requestData } from '../services/requests';
+import PropTypes from 'prop-types';
 import Loading from './Loading';
+
+import { requestGet } from '../services/requests';
+import { GTProps } from '../interfaces/IProps';
 import { check, editIcon } from '../images';
 
-const GamesTable = ({ currentFilter, isAdm }) => {
+const GamesTable = ({ currentFilter, isAdm }: GTProps) => {
   const [games, setGames] = useState([]);
 
   const navigate = useNavigate();
 
-  const getGames = (endpoint) => requestData(endpoint)
+  const getGames = (endpoint: string) => requestGet(endpoint)
     .then((response) => setGames(response))
     .catch((error) => console.log(error));
 
@@ -58,7 +60,7 @@ const GamesTable = ({ currentFilter, isAdm }) => {
       <tbody>
         {
           games
-            .sort((a, b) => b.inProgress - a.inProgress)
+            .sort((a: any, b: any) => b.inProgress - a.inProgress)
             .map(({
               id,
               teamHome,
@@ -72,7 +74,7 @@ const GamesTable = ({ currentFilter, isAdm }) => {
                   className="games-table-tbody-home-team"
                   data-testid={ `matches__home_team_${id}` }
                 >
-                  { teamHome.teamName }
+                  { teamHome['teamName'] }
                 </td>
                 <td
                   className="games-table-tbody-home-team-goals"
@@ -91,7 +93,7 @@ const GamesTable = ({ currentFilter, isAdm }) => {
                   className="games-table-tbody-away-team"
                   data-testid={ `matches__away_team_${id}` }
                 >
-                  { teamAway.teamName }
+                  { teamAway['teamName'] }
                 </td>
                 <td className="games-table-tbody-empty-space">{ ' ' }</td>
                 <td className="games-table-tbody-status">
