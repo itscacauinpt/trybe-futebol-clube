@@ -4,6 +4,10 @@
 # Trybe Futebol Club
 > Status: finished :heavy_check_mark: :warning:
 
+> :warning: Extra:
+> - [ ] TS + React
+> - [ ] Unit tests
+
 Project done individually during the course of the <a href="https://www.betrybe.com">Trybe</a>.
 
 TFC is an informative website about soccer matches and standings! :soccer:
