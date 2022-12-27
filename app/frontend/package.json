@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.0",
     "eslint-plugin-sonarjs": "0.10.0",
     "jest": "26.6.0",
     "stylelint": "13.8.0",

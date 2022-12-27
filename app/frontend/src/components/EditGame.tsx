@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import TeamOption from './TeamOption';
 import Scoreboard from './Scoreboard';
+import { EGProps } from '../interfaces/IProps';
 
 const EditGame = ({
   homeTeam,
@@ -13,7 +14,7 @@ const EditGame = ({
   updateMatch,
   finishMatch,
   getTeam,
-}) => {
+}: EGProps) => {
   const [currentHomeTeamGoals, setHomeTeamGoals] = useState(homeTeamGoals);
   const [currentAwayTeamGoals, setAwayTeamGoals] = useState(awayTeamGoals);
   return (
@@ -23,7 +24,7 @@ const EditGame = ({
           <TeamOption
             testId="insertion_matches__select_home_team"
             teams={ homeTeam }
-            homeTeam
+            homeTeam={ homeTeam }
             getTeam={ getTeam }
           />
           <Scoreboard
@@ -79,14 +80,14 @@ const EditGame = ({
 };
 
 EditGame.propTypes = ({
-  homeTeam: PropTypes.any,
-  awayTeam: PropTypes.any,
-  homeTeamGoals: PropTypes.any,
-  awayTeamGoals: PropTypes.any,
-  idMatch: PropTypes.any,
-  getTeam: PropTypes.any,
-  finishMatc: PropTypes.any,
-  updateMatch: PropTypes.any,
-}).isRequired;
+  homeTeam: PropTypes.any.isRequired,
+  awayTeam: PropTypes.any.isRequired,
+  homeTeamGoals: PropTypes.any.isRequired,
+  awayTeamGoals: PropTypes.any.isRequired,
+  idMatch: PropTypes.any.isRequired,
+  getTeam: PropTypes.any.isRequired,
+  finishMatc: PropTypes.any.isRequired,
+  updateMatch: PropTypes.any.isRequired,
+});
 
 export default EditGame;
